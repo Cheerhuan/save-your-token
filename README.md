@@ -9,10 +9,10 @@
 <a name="english"></a>
 ## English
 A high-efficiency web, PDF, and Office document analysis tool for **Hermes Agent** and **OpenClaw**. 
-Powered by **Microsoft MarkItDown**, it generates clean Markdown to significantly reduce LLM token consumption.
+Powered by **Microsoft MarkItDown** and adaptive extraction algorithms, it generates clean Markdown to significantly reduce LLM token consumption.
 
 ### Features
-* **Smart Extraction**: Clean text extraction via MarkItDown.
+* **Smart Extraction**: Adaptive extraction strategy (Trafilatura + MarkItDown).
 * **Batch Processing**: Convert entire directories of documents with one command.
 * **Cross-Platform**: Compatible with both Hermes Agent and OpenClaw.
 
@@ -25,13 +25,17 @@ Powered by **Microsoft MarkItDown**, it generates clean Markdown to significantl
 <a name="繁體中文"></a>
 ## 繁體中文
 這是一款專為 **Hermes Agent** 與 **OpenClaw** 設計的極致省 Token 文件分析工具。
-內建 **Microsoft MarkItDown** 引擎，能將各類複雜文件（PDF, Word, PPT, Excel）一鍵轉換為極致精簡的 Markdown。
+內建 **Microsoft MarkItDown** 與「智慧型自適應解析演算法」，能自動判斷網頁複雜度，選擇最節省 Token 的清洗路徑。
 
 ### 功能特點
-* **極致清洗**：移除無效雜訊。
-* **批量處理**：一鍵轉換整份文件資料夾。
-* **跨平台支援**：完美支援 Hermes Agent 與 OpenClaw。
+* **智慧萃取**: 自動偵測內容密度，在輕量與深度解析間切換。
+* **批量處理**: 一鍵轉換整份文件資料夾。
+* **跨平台支援**: 完美支援 Hermes Agent 與 OpenClaw。
 
 ### 快速開始
 * **單檔分析**: `python eco_engine.py <檔案路徑>`
 * **批量轉換**: `python eco_engine.py --batch <輸入資料夾> <輸出資料夾>`
+
+### 更新日誌 (v1.2.0)
+- **智慧自適應解析**: 加入 Trafilatura 與 MarkItDown 混合切換策略，根據內容密度自動選擇最高效的解析路徑。
+- **優化效能**: 減少不必要的資源消耗，Token 節省效果進一步提升。
