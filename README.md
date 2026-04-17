@@ -11,32 +11,27 @@
 A high-efficiency web, PDF, and Office document analysis tool for **Hermes Agent** and **OpenClaw**. 
 Powered by **Microsoft MarkItDown**, it generates clean Markdown to significantly reduce LLM token consumption.
 
-### Supported Formats
-* **Web**: URLs (clean extraction)
-* **Documents**: PDF, Word (docx), PowerPoint (pptx), Excel (xlsx)
+### Features
+* **Smart Extraction**: Clean text extraction via MarkItDown.
+* **Batch Processing**: Convert entire directories of documents with one command.
+* **Cross-Platform**: Compatible with both Hermes Agent and OpenClaw.
 
-### Installation
-1. Clone this repository to your Hermes/OpenClaw skills directory.
-2. Install dependencies: `pip install markitdown pymupdf trafilatura google-genai requests`
+### Quick Start
+* **Single File**: `python eco_engine.py <file_path>`
+* **Batch Convert**: `python eco_engine.py --batch <input_dir> <output_dir>`
 
 ---
 
 <a name="繁體中文"></a>
 ## 繁體中文
 這是一款專為 **Hermes Agent** 與 **OpenClaw** 設計的極致省 Token 文件分析工具。
-內建 **Microsoft MarkItDown** 引擎，能將各類複雜文件（PDF, Word, PPT）一鍵轉換為極致精簡的 Markdown。
+內建 **Microsoft MarkItDown** 引擎，能將各類複雜文件（PDF, Word, PPT, Excel）一鍵轉換為極致精簡的 Markdown。
 
-### 支援格式
-* **網頁**: 各類 URL 解析
-* **文件**: PDF, Word (docx), PowerPoint (pptx), Excel (xlsx)
+### 功能特點
+* **極致清洗**：移除無效雜訊。
+* **批量處理**：一鍵轉換整份文件資料夾。
+* **跨平台支援**：完美支援 Hermes Agent 與 OpenClaw。
 
-### 安裝方式
-1. 將此倉庫 Clone 至對應技能目錄。
-2. 安裝依賴：`pip install markitdown pymupdf trafilatura google-genai requests`
-
-### 更新日誌 (v1.1.0)
-- **整合 MarkItDown**: 支援多種 Office 文件格式解析，Token 優化效果提升。
-
-### Batch Processing
-You can convert an entire directory of documents at once:
-`python eco_engine.py --batch ./input_folder ./output_folder`
+### 快速開始
+* **單檔分析**: `python eco_engine.py <檔案路徑>`
+* **批量轉換**: `python eco_engine.py --batch <輸入資料夾> <輸出資料夾>`
