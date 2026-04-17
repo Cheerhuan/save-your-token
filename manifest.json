@@ -1,0 +1,10 @@
+{
+  "name": "save-your-token",
+  "version": "1.0.0",
+  "description": "極致省 Token 網頁與 PDF 分析工具",
+  "handler": {
+    "type": "python",
+    "command": "eco_engine.py",
+    "args": ["{{target}}"]
+  }
+}
