@@ -1,4 +1,4 @@
-# Save Your Token
+![Save Your Token Mascot](https://raw.githubusercontent.com/Cheerhuan/save-your-token/main/crab.PNG)
 
 ![Save Your Token Mascot](crab.PNG)
 
