@@ -36,3 +36,7 @@ Powered by **Microsoft MarkItDown**, it generates clean Markdown to significantl
 
 ### 更新日誌 (v1.1.0)
 - **整合 MarkItDown**: 支援多種 Office 文件格式解析，Token 優化效果提升。
+
+### Batch Processing
+You can convert an entire directory of documents at once:
+`python eco_engine.py --batch ./input_folder ./output_folder`
