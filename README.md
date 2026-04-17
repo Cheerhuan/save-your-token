@@ -16,9 +16,21 @@ Powered by **Microsoft MarkItDown** and adaptive extraction algorithms, it gener
 * **Batch Processing**: Convert entire directories of documents with one command.
 * **Cross-Platform**: Compatible with both Hermes Agent and OpenClaw.
 
-### Quick Start
-* **Single File**: `python eco_engine.py <file_path>`
-* **Batch Convert**: `python eco_engine.py --batch <input_dir> <output_dir>`
+### Installation
+確保您的環境已安裝 Python 3.8+，接著安裝必要的依賴套件：
+```bash
+pip install trafilatura markitdown
+```
+
+### Advanced Usage
+| 參數 | 說明 |
+| :--- | :--- |
+| `--batch` | 啟用批量處理模式 |
+| `--help` | 顯示所有指令說明 |
+
+### Troubleshooting
+* **檔案讀取失敗**：請檢查該網頁是否有防火牆或權限問題。
+* **解析過慢**：這可能是觸發了 MarkItDown 深度模式，建議檢查來源文件格式。
 
 ---
 
