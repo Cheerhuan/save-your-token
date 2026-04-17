@@ -1,6 +1,8 @@
-![Save Your Token Mascot](https://raw.githubusercontent.com/Cheerhuan/save-your-token/main/assets/crab.PNG)
+# Save Your Token
 
+![Save Your Token Mascot](crab.PNG)
 
+[English](#english) | [繁體中文](#繁體中文)
 
 # Save Your Token
 
