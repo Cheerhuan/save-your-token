@@ -1,4 +1,6 @@
-![Save Your Token Mascot](assets/crab.PNG)
+<div align="center">
+  <img src="assets/crab.PNG" width="400">
+</div>
 
 # Save Your Token
 
@@ -31,6 +33,3 @@ A high-efficiency web and PDF content analysis tool designed for Hermes Agent. I
 ### 安裝方式
 1. 將此倉庫 clone 到您的 `~/.hermes/skills/` 目錄。
 2. 安裝依賴：`pip install pymupdf trafilatura google-genai requests`
-
-### 使用說明
-請參考專案內的 `SKILL.md` 或直接詢問您的 AI 助手。
