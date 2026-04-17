@@ -1,34 +1,41 @@
 import sys
 import os
 from markitdown import MarkItDown
-from pathlib import Path
+import trafilatura
 
-def process_single(file_path):
-    md = MarkItDown()
-    result = md.convert(str(file_path))
-    return result.text_content
+def get_content_density(text):
+    # 簡單的資訊密度估算：文字長度 / (文字長度 + 標點符號密度)
+    # 這能幫我們判斷解析出來的是不是一堆垃圾 HTML 或 CSS 雜訊
+    if not text: return 0
+    return len(text.strip()) / len(text)
 
-def batch_convert(input_dir, output_dir):
-    md = MarkItDown()
-    output_path = Path(output_dir)
-    output_path.mkdir(parents=True, exist_ok=True)
-    
-    for file in Path(input_dir).glob("*"):
-        if file.is_file():
-            try:
-                result = md.convert(str(file))
-                out_file = output_path / f"{file.stem}.md"
-                out_file.write_text(result.text_content, encoding='utf-8')
-                print(f"Processed: {file.name}")
-            except Exception as e:
-                print(f"Failed: {file.name} - {e}")
+def smart_extract(target):
+    # 嘗試先用 trafilatura (快、省)
+    content = ""
+    try:
+        if os.path.exists(target):
+            with open(target, 'r', encoding='utf-8') as f:
+                content = f.read()
+        else:
+            content = trafilatura.fetch_url(target)
+            content = trafilatura.extract(content)
+        
+        # 若密度太低，表示 trafilatura 解析失敗或雜訊過多，切換到 MarkItDown (深層解析)
+        if get_content_density(content) < 0.2:
+            print("Content density low, switching to MarkItDown...", file=sys.stderr)
+            md = MarkItDown()
+            content = md.convert(target).text_content
+            
+    except Exception as e:
+        # 最終防線：使用 MarkItDown
+        md = MarkItDown()
+        content = md.convert(target).text_content
+        
+    return content
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        # 單檔模式
-        print(process_single(sys.argv[1])[:5000])
-    elif len(sys.argv) == 4 and sys.argv[1] == "--batch":
-        # 批量模式: --batch <input_dir> <output_dir>
-        batch_convert(sys.argv[2], sys.argv[3])
+    if len(sys.argv) > 1:
+        target = sys.argv[1]
+        print(smart_extract(target)[:5000])
     else:
-        print("用法: eco_engine.py <file> | --batch <input_dir> <output_dir>")
+        print("用法: eco_engine.py <target>")
