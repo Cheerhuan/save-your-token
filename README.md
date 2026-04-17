@@ -1,6 +1,6 @@
-<div align="center">
-  <img src="assets/crab.PNG" width="400">
-</div>
+![Save Your Token Mascot](https://raw.githubusercontent.com/Cheerhuan/save-your-token/main/assets/crab.PNG)
+
+
 
 # Save Your Token
 
