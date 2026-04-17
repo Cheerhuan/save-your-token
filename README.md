@@ -8,31 +8,31 @@
 
 <a name="english"></a>
 ## English
-A high-efficiency web and PDF content analysis tool for **Hermes Agent** and **OpenClaw**. 
-It cleans up noise and extracts essential content to reduce LLM token costs.
+A high-efficiency web, PDF, and Office document analysis tool for **Hermes Agent** and **OpenClaw**. 
+Powered by **Microsoft MarkItDown**, it generates clean Markdown to significantly reduce LLM token consumption.
+
+### Supported Formats
+* **Web**: URLs (clean extraction)
+* **Documents**: PDF, Word (docx), PowerPoint (pptx), Excel (xlsx)
 
 ### Installation
-* **For Hermes Agent**: 
-  Clone this repository to `~/.hermes/skills/save-your-token`
-* **For OpenClaw**: 
-  Clone this repository to `~/.openclaw/workspace/skills/save-your-token`
-* **Common Dependencies**: 
-  `pip install pymupdf trafilatura google-genai requests`
+1. Clone this repository to your Hermes/OpenClaw skills directory.
+2. Install dependencies: `pip install markitdown pymupdf trafilatura google-genai requests`
 
 ---
 
 <a name="繁體中文"></a>
 ## 繁體中文
-這是一款專為 **Hermes Agent** 與 **OpenClaw** 設計的極致省 Token 網頁與 PDF 分析工具。
-它能自動過濾網頁雜訊，只提取最有價值的核心內容，幫助您節省 API Token 費用。
+這是一款專為 **Hermes Agent** 與 **OpenClaw** 設計的極致省 Token 文件分析工具。
+內建 **Microsoft MarkItDown** 引擎，能將各類複雜文件（PDF, Word, PPT）一鍵轉換為極致精簡的 Markdown。
+
+### 支援格式
+* **網頁**: 各類 URL 解析
+* **文件**: PDF, Word (docx), PowerPoint (pptx), Excel (xlsx)
 
 ### 安裝方式
-* **Hermes Agent 使用者**：
-  請將本專案 Clone 至 `~/.hermes/skills/save-your-token` 目錄。
-* **OpenClaw 使用者**：
-  請將本專案 Clone 至 `~/.openclaw/workspace/skills/save-your-token` 目錄。
-* **共同依賴**：
-  請確保安裝必要套件：`pip install pymupdf trafilatura google-genai requests`
+1. 將此倉庫 Clone 至對應技能目錄。
+2. 安裝依賴：`pip install markitdown pymupdf trafilatura google-genai requests`
 
-### 使用說明
-安裝完成後，系統將自動識別 `save-your-token` 技能。您可直接呼叫並輸入目標網址或檔案路徑。
+### 更新日誌 (v1.1.0)
+- **整合 MarkItDown**: 支援多種 Office 文件格式解析，Token 優化效果提升。
