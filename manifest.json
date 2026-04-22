@@ -1,10 +1,10 @@
 {
   "name": "save-your-token",
-  "version": "1.0.0",
-  "description": "極致省 Token 網頁與 PDF 分析工具",
+  "version": "1.1.0",
+  "description": "極致省 Token 的多源內容分析與處理工具。整合 Firecrawl 繞過高防護網站，並可將內容送入 NotebookLM 進行深度解讀與格式轉換。",
   "handler": {
-    "type": "python",
-    "command": "eco_engine.py",
-    "args": ["{{target}}"]
+    "type": "shell",
+    "command": "python3 {{HERMES_SKILL_DIR}}/main.py \"{{input}}\" {{options}}",
+    "workdir": "{{HERMES_SKILL_DIR}}"
   }
 }
